@@ -973,11 +973,16 @@ span.CodeMirror-selectedtext { background: none; }
     position: relative;
 }
 #example-panel .example-code .codemirror-main {
-      height: 100%;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      right: 0;
+      bottom: 10px;
 }
 #example-panel .example-code .codemirror-main .CodeMirror {
         height: 100%;
         overflow-y: scroll;
+        border-radius: 5px;
 }
 #example-panel .example-code .codemirror-main .CodeMirror ::-webkit-scrollbar-thumb {
           width: 8px;
@@ -989,6 +994,9 @@ span.CodeMirror-selectedtext { background: none; }
 }
 #example-panel .example-code .codemirror-main .CodeMirror .option-changed {
           background: rgba(255, 255, 255, 0.1);
+}
+#example-panel .example-code .codemirror-main .CodeMirror .CodeMirror-cursor {
+          display: none;
 }
 #example-panel .toolbar {
     position: absolute;
