@@ -979,6 +979,17 @@ span.CodeMirror-selectedtext { background: none; }
         height: 100%;
         overflow-y: scroll;
 }
+#example-panel .example-code .codemirror-main .CodeMirror ::-webkit-scrollbar-thumb {
+          width: 8px;
+          min-height: 15px;
+          background: rgba(255, 255, 255, 0.3) !important;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          border-radius: 2px;
+}
+#example-panel .example-code .codemirror-main .CodeMirror .option-changed {
+          background: rgba(255, 255, 255, 0.1);
+}
 #example-panel .toolbar {
     position: absolute;
     top: 20px;
@@ -1592,5 +1603,3 @@ span.CodeMirror-selectedtext { background: none; }
   color: #032f62;
 }
 
-
-/*# sourceMappingURL=doc-bundle.css.map*/

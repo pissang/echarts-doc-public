@@ -162,10 +162,10 @@
     "desc": "<p>Duration of the first animation, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDuration: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n"
   },
   "animationEasing": {
-    "desc": "<p>Easing method used for the first animation. Varied easing effects can be found at <a href=\"http://localhost/incubator-echarts-website/examples/en/editor.html?c=line-easing\" target=\"_blank\">easing effect example</a>.</p>\n"
+    "desc": "<p>Easing method used for the first animation. Varied easing effects can be found at <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=line-easing\" target=\"_blank\">easing effect example</a>.</p>\n"
   },
   "animationDelay": {
-    "desc": "<p>Delay before updating the first animation, which supports callback function for different data to have different animation effect.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelay: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"http://localhost/incubator-echarts-website/examples/en/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
+    "desc": "<p>Delay before updating the first animation, which supports callback function for different data to have different animation effect.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelay: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
   },
   "animationDurationUpdate": {
     "desc": "<p>Time for animation to complete, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDurationUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n"
@@ -174,7 +174,7 @@
     "desc": "<p>Easing method used for animation.</p>\n"
   },
   "animationDelayUpdate": {
-    "desc": "<p>Delay before updating animation, which supports callback function for different data to have different animation effects.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelayUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"http://localhost/incubator-echarts-website/examples/en/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
+    "desc": "<p>Delay before updating animation, which supports callback function for different data to have different animation effects.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelayUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
   },
   "tooltip": {
     "desc": "<p>tooltip settings in this series.</p>\n"

@@ -525,7 +525,7 @@
     "desc": "<p>The animation duration of <code class=\"codespan\">checkpoint</code> in <code class=\"codespan\">timeline</code> component.</p>\n"
   },
   "checkpointStyle.animationEasing": {
-    "desc": "<p>The easing effect of animation of <code class=\"codespan\">checkpoint</code> in <code class=\"codespan\">timeline</code> component. Refers to <a href=\"http://localhost/incubator-echarts-website/examples/en/view.html?c=line-easing\" target=\"_blank\">easing sample</a> for different easing effects.</p>\n"
+    "desc": "<p>The easing effect of animation of <code class=\"codespan\">checkpoint</code> in <code class=\"codespan\">timeline</code> component. Refers to <a href=\"https://echarts.apache.org/examples/zh/view.html?c=line-easing\" target=\"_blank\">easing sample</a> for different easing effects.</p>\n"
   },
   "controlStyle": {
     "desc": "<p>The style of <em>control button</em>, which includes: <em>play button</em>, <em>previous button</em>, and <em>next button</em>.</p>\n"
