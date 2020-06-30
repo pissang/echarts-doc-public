@@ -45,7 +45,8 @@
   "clockwise": {
     "desc": "\n\n<p>饼图的扇区是否是顺时针排布。</p>\n",
     "uiControl": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": "true"
     }
   },
   "startAngle": {

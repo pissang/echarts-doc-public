@@ -63,7 +63,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-group.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-group.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -138,7 +143,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-image.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-image.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -240,7 +250,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-text.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-text.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -345,7 +360,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-rect.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-rect.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -450,7 +470,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-circle.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-circle.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -549,7 +574,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-ring.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-ring.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -651,7 +681,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-sector.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-sector.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -762,7 +797,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-arc.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-arc.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -873,7 +913,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-polygon.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-polygon.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -972,7 +1017,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-polyline.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-polyline.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -1071,7 +1121,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-line.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-line.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"
@@ -1176,7 +1231,12 @@
     "desc": "<p>Whether the element is totally ignored (neither render nor listen events).</p>\n"
   },
   "elements-bezierCurve.cursor": {
-    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n"
+    "desc": "<p>The mouse style when mouse hovers on an element, the same as <code class=\"codespan\">cursor</code> property in <code class=\"codespan\">CSS</code>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "auto,pointer,move",
+      "default": "pointer"
+    }
   },
   "elements-bezierCurve.draggable": {
     "desc": "<p>Can be dragged or not.</p>\n"

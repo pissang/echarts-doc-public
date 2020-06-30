@@ -24,7 +24,8 @@
   "roundCap": {
     "desc": "<blockquote>\n<p>从 <code class=\"codespan\">v4.5.0</code> 开始支持</p>\n</blockquote>\n\n\n<p>是否在环形柱条两侧使用圆弧效果。</p>\n<p>仅对极坐标系柱状图有效。</p>\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=doc-example/polar-roundCap&reset=1&edit=1\" width=\"800\" height=\"500\"><iframe />\n\n",
     "uiControl": {
-      "type": "boolean"
+      "type": "boolean",
+      "clean": "true"
     }
   },
   "label": {
@@ -520,7 +521,8 @@
   "showBackground": {
     "desc": "<blockquote>\n<p>从 <code class=\"codespan\">v4.7.0</code> 开始支持</p>\n</blockquote>\n\n\n<p>是否显示柱条的背景色。通过 <a href=\"#series-bar.backgroundStyle\">backgroundStyle</a> 配置背景样式。</p>\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=bar-background&reset=1&edit=1\" width=\"800\" height=\"400\"><iframe />\n\n",
     "uiControl": {
-      "type": "boolean"
+      "type": "boolean",
+      "clean": "true"
     }
   },
   "backgroundStyle": {

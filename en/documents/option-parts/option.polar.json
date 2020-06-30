@@ -9,25 +9,46 @@
     "desc": "<p><code class=\"codespan\">z</code> value of all graphical elements in , which controls order of drawing graphical components. Components with smaller <code class=\"codespan\">z</code> values may be overwritten by those with larger <code class=\"codespan\">z</code> values.</p>\n<p><code class=\"codespan\">z</code> has a lower priority to <code class=\"codespan\">zlevel</code>, and will not create new Canvas.</p>\n"
   },
   "center": {
-    "desc": "<p>Center position of Polar coordinate, the first of which is the horizontal position, and the second is the vertical position.</p>\n<p>Percentage is supported. When set in percentage, the item is relative to the container width, and the second item to the height.</p>\n<p><strong>Example: </strong></p>\n<pre><code>// Set to absolute pixel values\ncenter: [400, 300]\n// Set to relative percent\ncenter: [&#39;50%&#39;, &#39;50%&#39;]\n</code></pre>"
+    "desc": "<p>Center position of Polar coordinate, the first of which is the horizontal position, and the second is the vertical position.</p>\n<p>Percentage is supported. When set in percentage, the item is relative to the container width, and the second item to the height.</p>\n<p><strong>Example: </strong></p>\n<pre><code>// Set to absolute pixel values\ncenter: [400, 300]\n// Set to relative percent\ncenter: [&#39;50%&#39;, &#39;50%&#39;]\n</code></pre>",
+    "uiControl": {
+      "type": "percentvector",
+      "dims": "x,y"
+    }
   },
   "radius": {
-    "desc": "<p>Radius of Polar coordinate. Value can be:</p>\n<ul>\n<li><code class=\"codespan\">number</code>: Specify outside radius directly.</li>\n<li><p><code class=\"codespan\">string</code>: For example, <code class=\"codespan\">&#39;20%&#39;</code>, means that the outside radius is 20% of the viewport size (the little one between width and height of the chart container).</p>\n</li>\n<li><p><code class=\"codespan\">Array.&lt;number|string&gt;</code>: The first item specifies the inside radius, and the second item specifies the outside radius. Each item follows the definitions above.</p>\n</li>\n</ul>\n"
+    "desc": "<p>Radius of Polar coordinate. Value can be:</p>\n<ul>\n<li><code class=\"codespan\">number</code>: Specify outside radius directly.</li>\n<li><p><code class=\"codespan\">string</code>: For example, <code class=\"codespan\">&#39;20%&#39;</code>, means that the outside radius is 20% of the viewport size (the little one between width and height of the chart container).</p>\n</li>\n<li><p><code class=\"codespan\">Array.&lt;number|string&gt;</code>: The first item specifies the inside radius, and the second item specifies the outside radius. Each item follows the definitions above.</p>\n</li>\n</ul>\n",
+    "uiControl": {
+      "type": "percentvector",
+      "dims": "inner,outer",
+      "default": "0%, 75%"
+    }
   },
   "tooltip": {
     "desc": "<p>tooltip settings in the coordinate system component.</p>\n<hr>\n<p><strong>General Introduction:</strong></p>\n<p>tooltip can be configured on different places:</p>\n<ul>\n<li><p>Configured on global: <a href=\"#tooltip\">tooltip</a></p>\n</li>\n<li><p>Configured in a coordinate system: <a href=\"#grid.tooltip\">grid.tooltip</a>, <a href=\"#polar.tooltip\">polar.tooltip</a>, <a href=\"#single.tooltip\">single.tooltip</a></p>\n</li>\n<li><p>Configured in a series: <a href=\"#series.tooltip\">series.tooltip</a></p>\n</li>\n<li><p>Configured in each item of <code class=\"codespan\">series.data</code>: <a href=\"#series.data.tooltip\">series.data.tooltip</a></p>\n</li>\n</ul>\n<hr>\n"
   },
   "tooltip.show": {
-    "desc": "<p>Whether to show the tooltip component, including tooltip floating layer and <a href=\"#tooltip.axisPointer\">axisPointer</a>.</p>\n"
+    "desc": "<p>Whether to show the tooltip component, including tooltip floating layer and <a href=\"#tooltip.axisPointer\">axisPointer</a>.</p>\n",
+    "uiControl": {
+      "type": "boolean",
+      "default": "true"
+    }
   },
   "tooltip.trigger": {
-    "desc": "<p>Type of triggering.</p>\n<p>Options:</p>\n<ul>\n<li><p><code class=\"codespan\">&#39;item&#39;</code></p>\n<p>  Triggered by data item, which is mainly used for charts that don&#39;t have a category axis like scatter charts or pie charts.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;axis&#39;</code></p>\n<p>  Triggered by axes, which is mainly used for charts that have category axes, like bar charts or line charts.</p>\n<p> ECharts 2.x only supports axis trigger for category axis. In ECharts 3, it is supported for all types of axes in <a href=\"#grid\">grid</a> or <a href=\"#polar\">polar</a>. Also, you may assign axis with <a href=\"#tooltip.axisPointer.axis\">axisPointer.axis</a>.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;none&#39;</code></p>\n<p>  Trigger nothing.</p>\n</li>\n</ul>\n"
+    "desc": "<p>Type of triggering.</p>\n<p>Options:</p>\n<ul>\n<li><p><code class=\"codespan\">&#39;item&#39;</code></p>\n<p>  Triggered by data item, which is mainly used for charts that don&#39;t have a category axis like scatter charts or pie charts.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;axis&#39;</code></p>\n<p>  Triggered by axes, which is mainly used for charts that have category axes, like bar charts or line charts.</p>\n<p> ECharts 2.x only supports axis trigger for category axis. In ECharts 3, it is supported for all types of axes in <a href=\"#grid\">grid</a> or <a href=\"#polar\">polar</a>. Also, you may assign axis with <a href=\"#tooltip.axisPointer.axis\">axisPointer.axis</a>.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;none&#39;</code></p>\n<p>  Trigger nothing.</p>\n</li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "item,axis,none"
+    }
   },
   "tooltip.axisPointer": {
     "desc": "<p>Configuration item for axisPointer.</p>\n<p><code class=\"codespan\">tooltip.axisPointer</code> is like syntactic sugar of axisPointer settings on axes (for example, <a href=\"#xAxis.axisPointer\">xAxis.axisPointer</a> or <a href=\"#angleAxis.axisPointer\">angleAxis.axisPointer</a>). More detailed features can be configured on <code class=\"codespan\">someAxis.axisPointer</code>. But in common cases, using <code class=\"codespan\">tooltip.axisPointer</code> is more convenient.</p>\n<blockquote>\n<p><strong>Notice:</strong> configurations of <code class=\"codespan\">tooltip.axisPointer</code> has lower priority than that of <code class=\"codespan\">someAxis.axisPointer</code>.</p>\n</blockquote>\n<hr>\n<p><code class=\"codespan\">axisPointer</code> is a tool for displaying reference line and axis value under mouse pointer.</p>\n<p>For example:</p>\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=doc-example/candlestick-axisPointer&edit=1&reset=1\" width=\"600\" height=\"450\"><iframe />\n\n\n<p>In the demo above, <a href=\"#axisPointer.link\">axisPointer.link</a> is used to link axisPointer from different coordinate systems.</p>\n<p><code class=\"codespan\">axisPointer</code> can also be used on touch device, where user can drag the button to move the reference line and label.</p>\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=line-tooltip-touch&edit=1&reset=1\" width=\"600\" height=\"400\"><iframe />\n\n\n<p>In the cases that more than one axis exist, axisPointer helps to look inside the data.</p>\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=multiple-y-axis&edit=1&reset=1\" width=\"600\" height=\"300\"><iframe />\n\n<iframe  data-src=\"https://echarts.apache.org/examples/zh/view.html?c=multiple-x-axis&edit=1&reset=1\" width=\"600\" height=\"300\"><iframe />\n\n\n\n<hr>\n<blockquote>\n<p><strong>Notice:</strong>\nGenerally, axisPointers is configured in each axes who need them (for example <a href=\"#xAxis.axisPointer\">xAxis.axisPointer</a>), or configured in <code class=\"codespan\">tooltip</code> (for example <a href=\"#tooltip.axisPointer\">tooltip.axisPointer</a>).</p>\n</blockquote>\n<blockquote>\n<p>But these configurations can only be configured in global axisPointer:\n<a href=\"#axisPointer.triggerOn\">axisPointer.triggerOn</a>, <a href=\"#axisPointer.link\">axisPointer.link</a>.</p>\n</blockquote>\n<hr>\n<hr>\n<p><strong>How to display axisPointer:</strong></p>\n<p>In <a href=\"#grid\">cartesian (grid)</a> and <a href=\"#single\">polar](~polar) and (single axis</a>, each axis has its own axisPointer.</p>\n<p>Those axisPointer will not be displayed by default, utill configured as follows:</p>\n<ul>\n<li><p>Set <code class=\"codespan\">someAxis.axisPointer.show</code> (like <a href=\"#xAxis.axisPointer.show\">xAxis.axisPointer.show</a>) as <code class=\"codespan\">true</code>. Then axisPointer of this axis will be displayed.</p>\n</li>\n<li><p>Set <a href=\"#tooltip.trigger\">tooltip.trigger</a> as <code class=\"codespan\">&#39;axis&#39;</code>, or set <a href=\"#tooltip.axisPointer.type\">tooltip.axisPointer.type</a> as <code class=\"codespan\">&#39;cross&#39;</code>. Then coordinate system will automatically chose the axes who will display their axisPointers. (<a href=\"#tooltip.axisPointer.axis\">tooltip.axisPointer.axis</a> can be used to change the choice.) Notice, <code class=\"codespan\">axis.axisPointer</code> will override <code class=\"codespan\">tooltip.axisPointer</code> settings.</p>\n</li>\n</ul>\n<hr>\n<p><strong>How to display the label of axisPointer:</strong></p>\n<p>The label of axisPointer will not be displayed by default(namely, only reference line will be displayed by default), utill configured as follows:</p>\n<ul>\n<li><p>Set <code class=\"codespan\">someAxis.axisPointer.label.show</code> (for example <a href=\"#xAxis.axisPointer.show\">xAxis.axisPointer.label.show</a>) as <code class=\"codespan\">true</code>. Then the label of the axisPointer will be displayed.</p>\n</li>\n<li><p>Set <a href=\"#tooltip.axisPointer.type\">tooltip.axisPointer.type</a> as  <code class=\"codespan\">&#39;cross&#39;</code>. Then the label of the crossed axisPointers will be displayed.</p>\n</li>\n</ul>\n<hr>\n<p><strong>How to configure axisPointer on touch device:</strong></p>\n<p>Set <code class=\"codespan\">someAxis.axisPointer.handle.show</code> (for example <a href=\"#xAxis.axisPointer.handle.show\">xAxis.axisPointer.handle.show</a> as <code class=\"codespan\">true</code>. Then the button for dragging will be displayed. (This feature is not supported on polar).</p>\n<p><strong>Notice:</strong>\nIf tooltip does not work well in this case, try to set<a href=\"#tooltip.triggerOn\">tooltip.triggerOn</a> as <code class=\"codespan\">&#39;none&#39;</code> (for the effect: show tooltip when finger holding on the button, and hide tooltip after finger left the button), or set <a href=\"#tooltip.alwaysShowContent\">tooltip.alwaysShowContent</a> as <code class=\"codespan\">true</code> (then tooltip will always be displayed).</p>\n<p>See the <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=line-tooltip-touch&amp;edit=1&amp;reset=1\" target=\"_blank\">example</a>.</p>\n<hr>\n<p><strong>Snap to point</strong></p>\n<p>In value axis and time axis, if <a href=\"#xAxis.axisPointer.snap\">snap</a> is set as true, axisPointer will snap to point automatically.</p>\n<hr>\n"
   },
   "tooltip.axisPointer.type": {
-    "desc": "<p>Indicator type.</p>\n<p>Options:</p>\n<ul>\n<li><p><code class=\"codespan\">&#39;line&#39;</code> line indicator.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;shadow&#39;</code> shadow crosshair indicator.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;none&#39;</code> no indicator displayed.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;cross&#39;</code> crosshair indicator, which is actually the shortcut of enable two axisPointers of two orthometric axes.</p>\n</li>\n</ul>\n"
+    "desc": "<p>Indicator type.</p>\n<p>Options:</p>\n<ul>\n<li><p><code class=\"codespan\">&#39;line&#39;</code> line indicator.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;shadow&#39;</code> shadow crosshair indicator.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;none&#39;</code> no indicator displayed.</p>\n</li>\n<li><p><code class=\"codespan\">&#39;cross&#39;</code> crosshair indicator, which is actually the shortcut of enable two axisPointers of two orthometric axes.</p>\n</li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "none,line,shadow,cross"
+    }
   },
   "tooltip.axisPointer.axis": {
     "desc": "<p>The coordinate axis, which could be <code class=\"codespan\">&#39;x&#39;</code>, <code class=\"codespan\">&#39;y&#39;</code>, <code class=\"codespan\">&#39;radius&#39;</code>, or <code class=\"codespan\">&#39;angle&#39;</code>. By default, each coordinate system will automatically chose the axes whose will display its axisPointer (category axis or time axis is used by default).</p>\n"
@@ -54,22 +75,53 @@
     "desc": "<p>Distance between label and axis.</p>\n"
   },
   "tooltip.axisPointer.label.color": {
-    "desc": "<p> text color.</p>\n"
+    "desc": "<p> text color.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "'#fff'"
+    }
   },
   "tooltip.axisPointer.label.fontStyle": {
-    "desc": "<p> font style.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;italic&#39;</code></li>\n<li><code class=\"codespan\">&#39;oblique&#39;</code></li>\n</ul>\n"
+    "desc": "<p> font style.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;italic&#39;</code></li>\n<li><code class=\"codespan\">&#39;oblique&#39;</code></li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "normal",
+      "options": "normal,italic,oblique"
+    }
   },
   "tooltip.axisPointer.label.fontWeight": {
-    "desc": "<p> font thick weight.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;bold&#39;</code></li>\n<li><code class=\"codespan\">&#39;bolder&#39;</code></li>\n<li><code class=\"codespan\">&#39;lighter&#39;</code></li>\n<li>100 | 200 | 300 | 400...</li>\n</ul>\n"
+    "desc": "<p> font thick weight.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;bold&#39;</code></li>\n<li><code class=\"codespan\">&#39;bolder&#39;</code></li>\n<li><code class=\"codespan\">&#39;lighter&#39;</code></li>\n<li>100 | 200 | 300 | 400...</li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "normal",
+      "options": "normal,bold,bolder,lighter"
+    }
   },
   "tooltip.axisPointer.label.fontFamily": {
-    "desc": "<p> font family.</p>\n<p>Can also be &#39;serif&#39; , &#39;monospace&#39;, ...</p>\n"
+    "desc": "<p> font family.</p>\n<p>Can also be &#39;serif&#39; , &#39;monospace&#39;, ...</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "sans-serif",
+      "options": "sans-serif,serif,monospace,Arial,Courier New"
+    }
   },
   "tooltip.axisPointer.label.fontSize": {
-    "desc": "<p> font size.</p>\n"
+    "desc": "<p> font size.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "12",
+      "min": "1",
+      "step": "1"
+    }
   },
   "tooltip.axisPointer.label.lineHeight": {
-    "desc": "<p>Line height of the text fragment.</p>\n<p>If <code class=\"codespan\">lineHeight</code> is not set in <code class=\"codespan\">rich</code>, <code class=\"codespan\">lineHeight</code> in parent level will be used. For example:</p>\n<pre><code class=\"lang-js\">{\n    lineHeight: 56,\n    rich: {\n        a: {\n            // `lineHeight` is not set, then it will be 56\n        }\n    }\n}\n</code></pre>\n"
+    "desc": "<p>Line height of the text fragment.</p>\n<p>If <code class=\"codespan\">lineHeight</code> is not set in <code class=\"codespan\">rich</code>, <code class=\"codespan\">lineHeight</code> in parent level will be used. For example:</p>\n<pre><code class=\"lang-js\">{\n    lineHeight: 56,\n    rich: {\n        a: {\n            // `lineHeight` is not set, then it will be 56\n        }\n    }\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "1",
+      "default": "12"
+    }
   },
   "tooltip.axisPointer.label.width": {
     "desc": "<p>Width of the text block. It is the width of the text by default. In most cases, there is no need to specify it. You may want to use it in some cases like make simple table or using background image (see <code class=\"codespan\">backgroundColor</code>).</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> specifies the width and height of the content, without <code class=\"codespan\">padding</code>.</p>\n<p><code class=\"codespan\">width</code> can also be percent string, like <code class=\"codespan\">&#39;100%&#39;</code>, which represents the percent of <code class=\"codespan\">contentWidth</code> (that is, the width without <code class=\"codespan\">padding</code>) of its container box. It is based on <code class=\"codespan\">contentWidth</code> because that each text fragment is layout based on the <code class=\"codespan\">content box</code>, where it makes no sense that calculating width based on <code class=\"codespan\">outerWith</code> in prectice.</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> only work when <code class=\"codespan\">rich</code> specified.</p>\n"
@@ -78,25 +130,55 @@
     "desc": "<p>Height of the text block. It is the width of the text by default. You may want to use it in some cases like using background image (see <code class=\"codespan\">backgroundColor</code>).</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> specifies the width and height of the content, without <code class=\"codespan\">padding</code>.</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> only work when <code class=\"codespan\">rich</code> specified.</p>\n"
   },
   "tooltip.axisPointer.label.textBorderColor": {
-    "desc": "<p>Storke color of the text.</p>\n"
+    "desc": "<p>Storke color of the text.</p>\n",
+    "uiControl": {
+      "type": "color"
+    }
   },
   "tooltip.axisPointer.label.textBorderWidth": {
-    "desc": "<p>Storke line width of the text.</p>\n"
+    "desc": "<p>Storke line width of the text.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.textShadowColor": {
-    "desc": "<p>Shadow color of the text itself.</p>\n"
+    "desc": "<p>Shadow color of the text itself.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "#000"
+    }
   },
   "tooltip.axisPointer.label.textShadowBlur": {
-    "desc": "<p>Shadow blue of the text itself.</p>\n"
+    "desc": "<p>Shadow blue of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.textShadowOffsetX": {
-    "desc": "<p>Shadow X offset of the text itself.</p>\n"
+    "desc": "<p>Shadow X offset of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.textShadowOffsetY": {
-    "desc": "<p>Shadow Y offset of the text itself.</p>\n"
+    "desc": "<p>Shadow Y offset of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.padding": {
-    "desc": "<p>axisPointer space around content. The unit is px. Default values for each position are 5. And they can be set to different values with left, right, top, and bottom.</p>\n<p>Examples: </p>\n<pre><code class=\"lang-js\">// Set padding to be 5\npadding: 5\n// Set the top and bottom paddings to be 5, and left and right paddings to be 10\npadding: [5, 10]\n// Set each of the four paddings seperately\npadding: [\n    5,  // up\n    10, // right\n    5,  // down\n    10, // left\n]\n</code></pre>\n"
+    "desc": "<p>axisPointer space around content. The unit is px. Default values for each position are 5. And they can be set to different values with left, right, top, and bottom.</p>\n<p>Examples: </p>\n<pre><code class=\"lang-js\">// Set padding to be 5\npadding: 5\n// Set the top and bottom paddings to be 5, and left and right paddings to be 10\npadding: [5, 10]\n// Set each of the four paddings seperately\npadding: [\n    5,  // up\n    10, // right\n    5,  // down\n    10, // left\n]\n</code></pre>\n",
+    "uiControl": {
+      "type": "vector",
+      "min": "0",
+      "dims": "T,R,B,L"
+    }
   },
   "tooltip.axisPointer.label.backgroundColor": {
     "desc": "<p>Background color of label, the same as <a href=\"#xAxis.axisLine.lineStyle.color\">axis.axisLine.lineStyle.color</a> by default.</p>\n"
@@ -108,112 +190,271 @@
     "desc": "<p>Border width of label.</p>\n"
   },
   "tooltip.axisPointer.label.shadowBlur": {
-    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n"
+    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "3",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.shadowColor": {
-    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n"
+    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "#aaa"
+    }
   },
   "tooltip.axisPointer.label.shadowOffsetX": {
-    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.label.shadowOffsetY": {
-    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.lineStyle": {
     "desc": "<p>It is valid when <a href=\"#tooltip.axisPointer.type\">axisPointer.type</a> is <code class=\"codespan\">&#39;line&#39;</code>.</p>\n"
   },
   "tooltip.axisPointer.lineStyle.color": {
-    "desc": "<p>Line color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n"
+    "desc": "<p>Line color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n",
+    "uiControl": {
+      "type": "color"
+    }
   },
   "tooltip.axisPointer.lineStyle.width": {
-    "desc": "<p> line width.</p>\n"
+    "desc": "<p> line width.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "value": "1",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.lineStyle.type": {
-    "desc": "<p> line type.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;solid&#39;</code></li>\n<li><code class=\"codespan\">&#39;dashed&#39;</code></li>\n<li><code class=\"codespan\">&#39;dotted&#39;</code></li>\n</ul>\n"
+    "desc": "<p> line type.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;solid&#39;</code></li>\n<li><code class=\"codespan\">&#39;dashed&#39;</code></li>\n<li><code class=\"codespan\">&#39;dotted&#39;</code></li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "solid",
+      "options": "solid,dashed,dotted"
+    }
   },
   "tooltip.axisPointer.lineStyle.shadowBlur": {
-    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n"
+    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.lineStyle.shadowColor": {
-    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n"
+    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": ""
+    }
   },
   "tooltip.axisPointer.lineStyle.shadowOffsetX": {
-    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.lineStyle.shadowOffsetY": {
-    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.lineStyle.opacity": {
-    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n"
+    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "1",
+      "min": "0",
+      "max": "1",
+      "step": "0.01"
+    }
   },
   "tooltip.axisPointer.shadowStyle": {
     "desc": "<p>It is valid when <a href=\"#tooltip.axisPointer.type\">axisPointer.type</a> is <code class=\"codespan\">&#39;shadow&#39;</code>.</p>\n"
   },
   "tooltip.axisPointer.shadowStyle.color": {
-    "desc": "<p>Fill color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n"
+    "desc": "<p>Fill color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n",
+    "uiControl": {
+      "type": "color"
+    }
   },
   "tooltip.axisPointer.shadowStyle.shadowBlur": {
-    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n"
+    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.shadowStyle.shadowColor": {
-    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n"
+    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": ""
+    }
   },
   "tooltip.axisPointer.shadowStyle.shadowOffsetX": {
-    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.shadowStyle.shadowOffsetY": {
-    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.shadowStyle.opacity": {
-    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n"
+    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "1",
+      "min": "0",
+      "max": "1",
+      "step": "0.01"
+    }
   },
   "tooltip.axisPointer.crossStyle": {
     "desc": "<p>It is valid when <a href=\"#tooltip.axisPointer.type\">axisPointer.type</a> is <code class=\"codespan\">&#39;cross&#39;</code>.</p>\n"
   },
   "tooltip.axisPointer.crossStyle.color": {
-    "desc": "<p>Line color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n"
+    "desc": "<p>Line color. </p>\n<blockquote>\n<p>Color can be represented in RGB, for example <code class=\"codespan\">&#39;rgb(128, 128, 128)&#39;</code>. RGBA can be used when you need alpha channel, for example <code class=\"codespan\">&#39;rgba(128, 128, 128, 0.5)&#39;</code>. You may also use hexadecimal format, for example <code class=\"codespan\">&#39;#ccc&#39;</code>. Gradient color and texture are also supported besides single colors.</p>\n<pre><code class=\"lang-js\">// Linear gradient. First four parameters are x0, y0, x2, and y2, each ranged from 0 to 1, standing for percentage in the bounding box. If global is `true`, then the first four parameters are in absolute pixel positions.\ncolor: {\n    type: &#39;linear&#39;,\n    x: 0,\n    y: 0,\n    x2: 0,\n    y2: 1,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Radial gradient. First three parameters are x and y positions of center, and radius, similar to linear gradient.\ncolor: {\n    type: &#39;radial&#39;,\n    x: 0.5,\n    y: 0.5,\n    r: 0.5,\n    colorStops: [{\n        offset: 0, color: &#39;red&#39; // color at 0% position\n    }, {\n        offset: 1, color: &#39;blue&#39; // color at 100% position\n    }],\n    global: false // false by default\n}\n// Fill with texture\ncolor: {\n    image: imageDom, // HTMLImageElement, and HTMLCanvasElement are supported, while string path is not supported\n    repeat: &#39;repeat&#39; // whether to repeat texture, whose value can be repeat-x, repeat-y, or no-repeat\n}\n</code></pre>\n</blockquote>\n",
+    "uiControl": {
+      "type": "color"
+    }
   },
   "tooltip.axisPointer.crossStyle.width": {
-    "desc": "<p> line width.</p>\n"
+    "desc": "<p> line width.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "value": "1",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.crossStyle.type": {
-    "desc": "<p> line type.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;solid&#39;</code></li>\n<li><code class=\"codespan\">&#39;dashed&#39;</code></li>\n<li><code class=\"codespan\">&#39;dotted&#39;</code></li>\n</ul>\n"
+    "desc": "<p> line type.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;solid&#39;</code></li>\n<li><code class=\"codespan\">&#39;dashed&#39;</code></li>\n<li><code class=\"codespan\">&#39;dotted&#39;</code></li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "solid",
+      "options": "solid,dashed,dotted"
+    }
   },
   "tooltip.axisPointer.crossStyle.shadowBlur": {
-    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n"
+    "desc": "<p>Size of shadow blur. This attribute should be used along with <code class=\"codespan\">shadowColor</code>,<code class=\"codespan\">shadowOffsetX</code>, <code class=\"codespan\">shadowOffsetY</code> to set shadow to component.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">{\n    shadowColor: &#39;rgba(0, 0, 0, 0.5)&#39;,\n    shadowBlur: 10\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.crossStyle.shadowColor": {
-    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n"
+    "desc": "<p>Shadow color. Support same format as <code class=\"codespan\">color</code>.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": ""
+    }
   },
   "tooltip.axisPointer.crossStyle.shadowOffsetX": {
-    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the horizontal direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.crossStyle.shadowOffsetY": {
-    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n"
+    "desc": "<p>Offset distance on the vertical direction of shadow.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.axisPointer.crossStyle.opacity": {
-    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n"
+    "desc": "<p>Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "1",
+      "min": "0",
+      "max": "1",
+      "step": "0.01"
+    }
   },
   "tooltip.axisPointer.animation": {
-    "desc": "<p>Whether to enable animation.</p>\n"
+    "desc": "<p>Whether to enable animation.</p>\n",
+    "uiControl": {
+      "type": "boolean",
+      "default": "true",
+      "clean": "true"
+    }
   },
   "tooltip.axisPointer.animationThreshold": {
     "desc": "<p>Whether to set graphic number threshold to animation. Animation will be disabled when graphic number is larger than threshold.</p>\n"
   },
   "tooltip.axisPointer.animationDuration": {
-    "desc": "<p>Duration of the first animation, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDuration: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n"
+    "desc": "<p>Duration of the first animation, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDuration: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "default": "1000",
+      "step": "20",
+      "clean": "true"
+    }
   },
   "tooltip.axisPointer.animationEasing": {
-    "desc": "<p>Easing method used for the first animation. Varied easing effects can be found at <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=line-easing\" target=\"_blank\">easing effect example</a>.</p>\n"
+    "desc": "<p>Easing method used for the first animation. Varied easing effects can be found at <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=line-easing\" target=\"_blank\">easing effect example</a>.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "linear,quadraticIn,quadraticOut,quadraticInOut,cubicIn,cubicOut,cubicInOut,quarticIn,quarticOut,quarticInOut,quinticIn,quinticOut,quinticInOut,sinusoidalIn,sinusoidalOut,sinusoidalInOut,exponentialIn,exponentialOut,exponentialInOut,circularIn,circularOut,circularInOut,elasticIn,elasticOut,elasticInOut,backIn,backOut,backInOut,bounceIn,bounceOut,bounceInOut",
+      "clean": "true"
+    }
   },
   "tooltip.axisPointer.animationDelay": {
     "desc": "<p>Delay before updating the first animation, which supports callback function for different data to have different animation effect.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelay: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
   },
   "tooltip.axisPointer.animationDurationUpdate": {
-    "desc": "<p>Time for animation to complete, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDurationUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n"
+    "desc": "<p>Time for animation to complete, which supports callback function for different data to have different animation effect:</p>\n<pre><code class=\"lang-js\">animationDurationUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "default": "1000",
+      "step": "20"
+    }
   },
   "tooltip.axisPointer.animationEasingUpdate": {
-    "desc": "<p>Easing method used for animation.</p>\n"
+    "desc": "<p>Easing method used for animation.</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "options": "linear,quadraticIn,quadraticOut,quadraticInOut,cubicIn,cubicOut,cubicInOut,quarticIn,quarticOut,quarticInOut,quinticIn,quinticOut,quinticInOut,sinusoidalIn,sinusoidalOut,sinusoidalInOut,exponentialIn,exponentialOut,exponentialInOut,circularIn,circularOut,circularInOut,elasticIn,elasticOut,elasticInOut,backIn,backOut,backInOut,bounceIn,bounceOut,bounceInOut"
+    }
   },
   "tooltip.axisPointer.animationDelayUpdate": {
     "desc": "<p>Delay before updating animation, which supports callback function for different data to have different animation effects.</p>\n<p>For example:</p>\n<pre><code class=\"lang-js\">animationDelayUpdate: function (idx) {\n    // delay for later data is larger\n    return idx * 100;\n}\n</code></pre>\n<p>See <a href=\"https://echarts.apache.org/examples/zh/editor.html?c=bar-animation-delay\" target=\"_blank\">this example</a> for more information.</p>\n"
@@ -228,34 +469,79 @@
     "desc": "<p>The background color of tooltip&#39;s floating layer.</p>\n"
   },
   "tooltip.borderColor": {
-    "desc": "<p>The border color of tooltip&#39;s floating layer.</p>\n"
+    "desc": "<p>The border color of tooltip&#39;s floating layer.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "#333"
+    }
   },
   "tooltip.borderWidth": {
-    "desc": "<p>The border width of tooltip&#39;s floating layer.</p>\n"
+    "desc": "<p>The border width of tooltip&#39;s floating layer.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.padding": {
-    "desc": "<p>The floating layer of tooltip space around content. The unit is px. Default values for each position are 5. And they can be set to different values with left, right, top, and bottom.</p>\n<p>Examples: </p>\n<pre><code class=\"lang-js\">// Set padding to be 5\npadding: 5\n// Set the top and bottom paddings to be 5, and left and right paddings to be 10\npadding: [5, 10]\n// Set each of the four paddings seperately\npadding: [\n    5,  // up\n    10, // right\n    5,  // down\n    10, // left\n]\n</code></pre>\n"
+    "desc": "<p>The floating layer of tooltip space around content. The unit is px. Default values for each position are 5. And they can be set to different values with left, right, top, and bottom.</p>\n<p>Examples: </p>\n<pre><code class=\"lang-js\">// Set padding to be 5\npadding: 5\n// Set the top and bottom paddings to be 5, and left and right paddings to be 10\npadding: [5, 10]\n// Set each of the four paddings seperately\npadding: [\n    5,  // up\n    10, // right\n    5,  // down\n    10, // left\n]\n</code></pre>\n",
+    "uiControl": {
+      "type": "vector",
+      "min": "0",
+      "dims": "T,R,B,L"
+    }
   },
   "tooltip.textStyle": {
     "desc": "<p>The text syle of tooltip&#39;s floating layer.</p>\n"
   },
   "tooltip.textStyle.color": {
-    "desc": "<p> text color.</p>\n"
+    "desc": "<p> text color.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "'#fff'"
+    }
   },
   "tooltip.textStyle.fontStyle": {
-    "desc": "<p> font style.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;italic&#39;</code></li>\n<li><code class=\"codespan\">&#39;oblique&#39;</code></li>\n</ul>\n"
+    "desc": "<p> font style.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;italic&#39;</code></li>\n<li><code class=\"codespan\">&#39;oblique&#39;</code></li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "normal",
+      "options": "normal,italic,oblique"
+    }
   },
   "tooltip.textStyle.fontWeight": {
-    "desc": "<p> font thick weight.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;bold&#39;</code></li>\n<li><code class=\"codespan\">&#39;bolder&#39;</code></li>\n<li><code class=\"codespan\">&#39;lighter&#39;</code></li>\n<li>100 | 200 | 300 | 400...</li>\n</ul>\n"
+    "desc": "<p> font thick weight.</p>\n<p>Options are:</p>\n<ul>\n<li><code class=\"codespan\">&#39;normal&#39;</code></li>\n<li><code class=\"codespan\">&#39;bold&#39;</code></li>\n<li><code class=\"codespan\">&#39;bolder&#39;</code></li>\n<li><code class=\"codespan\">&#39;lighter&#39;</code></li>\n<li>100 | 200 | 300 | 400...</li>\n</ul>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "normal",
+      "options": "normal,bold,bolder,lighter"
+    }
   },
   "tooltip.textStyle.fontFamily": {
-    "desc": "<p> font family.</p>\n<p>Can also be &#39;serif&#39; , &#39;monospace&#39;, ...</p>\n"
+    "desc": "<p> font family.</p>\n<p>Can also be &#39;serif&#39; , &#39;monospace&#39;, ...</p>\n",
+    "uiControl": {
+      "type": "enum",
+      "default": "sans-serif",
+      "options": "sans-serif,serif,monospace,Arial,Courier New"
+    }
   },
   "tooltip.textStyle.fontSize": {
-    "desc": "<p> font size.</p>\n"
+    "desc": "<p> font size.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "default": "14",
+      "min": "1",
+      "step": "1"
+    }
   },
   "tooltip.textStyle.lineHeight": {
-    "desc": "<p>Line height of the text fragment.</p>\n<p>If <code class=\"codespan\">lineHeight</code> is not set in <code class=\"codespan\">rich</code>, <code class=\"codespan\">lineHeight</code> in parent level will be used. For example:</p>\n<pre><code class=\"lang-js\">{\n    lineHeight: 56,\n    rich: {\n        a: {\n            // `lineHeight` is not set, then it will be 56\n        }\n    }\n}\n</code></pre>\n"
+    "desc": "<p>Line height of the text fragment.</p>\n<p>If <code class=\"codespan\">lineHeight</code> is not set in <code class=\"codespan\">rich</code>, <code class=\"codespan\">lineHeight</code> in parent level will be used. For example:</p>\n<pre><code class=\"lang-js\">{\n    lineHeight: 56,\n    rich: {\n        a: {\n            // `lineHeight` is not set, then it will be 56\n        }\n    }\n}\n</code></pre>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "1",
+      "default": "12"
+    }
   },
   "tooltip.textStyle.width": {
     "desc": "<p>Width of the text block. It is the width of the text by default. In most cases, there is no need to specify it. You may want to use it in some cases like make simple table or using background image (see <code class=\"codespan\">backgroundColor</code>).</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> specifies the width and height of the content, without <code class=\"codespan\">padding</code>.</p>\n<p><code class=\"codespan\">width</code> can also be percent string, like <code class=\"codespan\">&#39;100%&#39;</code>, which represents the percent of <code class=\"codespan\">contentWidth</code> (that is, the width without <code class=\"codespan\">padding</code>) of its container box. It is based on <code class=\"codespan\">contentWidth</code> because that each text fragment is layout based on the <code class=\"codespan\">content box</code>, where it makes no sense that calculating width based on <code class=\"codespan\">outerWith</code> in prectice.</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> only work when <code class=\"codespan\">rich</code> specified.</p>\n"
@@ -264,22 +550,47 @@
     "desc": "<p>Height of the text block. It is the width of the text by default. You may want to use it in some cases like using background image (see <code class=\"codespan\">backgroundColor</code>).</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> specifies the width and height of the content, without <code class=\"codespan\">padding</code>.</p>\n<p>Notice, <code class=\"codespan\">width</code> and <code class=\"codespan\">height</code> only work when <code class=\"codespan\">rich</code> specified.</p>\n"
   },
   "tooltip.textStyle.textBorderColor": {
-    "desc": "<p>Storke color of the text.</p>\n"
+    "desc": "<p>Storke color of the text.</p>\n",
+    "uiControl": {
+      "type": "color"
+    }
   },
   "tooltip.textStyle.textBorderWidth": {
-    "desc": "<p>Storke line width of the text.</p>\n"
+    "desc": "<p>Storke line width of the text.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.textStyle.textShadowColor": {
-    "desc": "<p>Shadow color of the text itself.</p>\n"
+    "desc": "<p>Shadow color of the text itself.</p>\n",
+    "uiControl": {
+      "type": "color",
+      "default": "#000"
+    }
   },
   "tooltip.textStyle.textShadowBlur": {
-    "desc": "<p>Shadow blue of the text itself.</p>\n"
+    "desc": "<p>Shadow blue of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "min": "0",
+      "step": "0.5"
+    }
   },
   "tooltip.textStyle.textShadowOffsetX": {
-    "desc": "<p>Shadow X offset of the text itself.</p>\n"
+    "desc": "<p>Shadow X offset of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "step": "0.5"
+    }
   },
   "tooltip.textStyle.textShadowOffsetY": {
-    "desc": "<p>Shadow Y offset of the text itself.</p>\n"
+    "desc": "<p>Shadow Y offset of the text itself.</p>\n",
+    "uiControl": {
+      "type": "number",
+      "step": "0.5"
+    }
   },
   "tooltip.extraCssText": {
     "desc": "<p>Extra CSS style for floating layer. The following is an example for adding shadow.</p>\n<pre><code class=\"lang-js\">extraCssText: &#39;box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);&#39;\n</code></pre>\n"
